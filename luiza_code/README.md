@@ -29,7 +29,8 @@
 
 👤 **Elza Meira Puppo**
 
-* Github: [@](https://github.com/)
+* Github: [@ElzaPuppo](https://github.com/ElzaPuppo)
+* LinkedIn: [@elzapuppo](https://linkedin.com/in/elzapuppo)
 
 👤 **Victória Simonetti Portella**
 
