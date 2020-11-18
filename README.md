@@ -8,7 +8,7 @@
 
 > Criação de um marketplace onde é possível um vendedor cadastrar, atualizar e buscar produtos. Além disso ele também será capaz de consultar seu estoque e sinalizar produtos inativos.
 
-## Equipe
+## Equipe - Las Paythonettes
 
 👤 **Ana Geórgia Gama**
 
