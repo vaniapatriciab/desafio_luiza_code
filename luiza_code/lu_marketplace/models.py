@@ -1,15 +1,6 @@
 from django.db import models
 from django.db.models.deletion import CASCADE
-
-class Vendedor(models.Model):
-    vend_nome = models.CharField(max_length=100, verbose_name='Nome')
-    vend_email = models.EmailField(max_length=254, verbose_name='E-mail')
-
-    def __str__(self) -> str:
-        return self.vend_nome
-
-    
-
+from django.contrib.auth.models import User
 
 
 class Produto(models.Model):
@@ -19,7 +10,7 @@ class Produto(models.Model):
     prod_codigo = models.IntegerField(verbose_name='Código do Produto')
     prod_qtd = models.IntegerField(verbose_name='Quantidade')
     prod_inativo = models.BooleanField(default=False, verbose_name='Produto Inativo')
-    vend_id = models.ForeignKey(Vendedor, on_delete=CASCADE, verbose_name='Vendedor')
+    vend_id = models.ForeignKey(User, on_delete=CASCADE, verbose_name='Vendedor')
 
     def __str__(self) -> str:
         return self.prod_nome
