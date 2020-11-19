@@ -1,6 +1,8 @@
 from django.urls import path
-from.import views
+from .views import CadastrarProduto
 
 urlpatterns = [
-    path('', views.index, name='luMarketplace-index'),
+
+    path('cad_produtos/', CadastrarProduto.as_view(),
+         name='luMarketplace-cadastro')
 ]
