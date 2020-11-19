@@ -6,12 +6,15 @@
         </form>
     </div>
 <body>
-    {% for p in produtos %}
-    <li>
-        {{p.prod_nome}}
-    </li>
-    {%endfor%}
-
+    {% if produtos %}
+        {% for p in produtos %}
+        <li>
+            {{p.prod_nome}}
+        </li>
+        {%endfor%}        
+    {% else %}
+        <p> Produto não encontrado </p>
+    {% endif %}
 </body>
 
 </html>
