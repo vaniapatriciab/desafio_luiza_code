@@ -16,6 +16,14 @@ def index(request):
     return render(request, 'lu_marketplace/index.html', context)
 
 
+def status(request):
+    produtos = Produto.objects.all()
+    for produto in produtos:
+        if not produto.prod_inativo:
+            return 'Inativo'
+        else:
+            return 'Ativo'
+
 
 class CadastrarProduto(SuccessMessageMixin, CreateView):
     model = Produto
