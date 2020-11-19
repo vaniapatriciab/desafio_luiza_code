@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from . models import Produto
 from django.views.generic import CreateView
+from django.contrib.messages.views import SuccessMessageMixin
+
 
 
 def index(request):
@@ -14,7 +16,12 @@ def index(request):
     return render(request, 'lu_marketplace/index.html', context)
 
 
-class CadastrarProduto(CreateView):
+class CadastrarProduto(SuccessMessageMixin, CreateView):
     model = Produto
     template_name = 'cadastrar_prod.html'
     fields = '__all__'
+    success_message = 'Produto cadastrado com sucesso!'
+    def get_success_url(self):  
+        return '/'
+
+
