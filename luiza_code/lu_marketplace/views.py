@@ -16,6 +16,7 @@ def index(request):
     return render(request, 'lu_marketplace/index.html', context)
 
 
+
 class CadastrarProduto(SuccessMessageMixin, CreateView):
     model = Produto
     template_name = 'cadastrar_prod.html'

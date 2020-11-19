@@ -6,16 +6,11 @@ from django.contrib.auth.models import User
 class Produto(models.Model):
     prod_nome = models.CharField(max_length=100, verbose_name='Nome')
     prod_descricao = models.TextField(max_length=100, verbose_name='Descrição')
-    prod_preco = models.DecimalField(
-    max_digits=6, decimal_places=2, verbose_name='Preço')
+    prod_preco = models.DecimalField(max_digits=6, decimal_places=2, verbose_name='Preço')
     prod_codigo = models.IntegerField(verbose_name='Código do Produto')
     prod_qtd = models.IntegerField(verbose_name='Quantidade')
-    prod_inativo = models.BooleanField(
-    default=False, verbose_name='Produto Inativo')
-    vend_id = models.ForeignKey(
-    User, on_delete=CASCADE, verbose_name='Vendedor')
+    prod_inativo = models.BooleanField(default=False, verbose_name='Produto Inativo')
+    vend_id = models.ForeignKey(User, on_delete=CASCADE, verbose_name='Vendedor')
 
     def __str__(self) -> str:
         return self.prod_nome
-
-    

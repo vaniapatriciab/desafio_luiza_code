@@ -5,15 +5,46 @@
     </br>
     <h3>Produtos</h3>
     </br>
-    
-    {% if produtos %}
-        {% for p in produtos %}
-        <li>
-            {{p.prod_nome}}
-        </li>
-        {%endfor%}        
-    {% else %}
-        <p> Produto não encontrado </p>
-    {% endif %}
+
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Cód. Prod.</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Descrição</th>
+                    <th scope="col">Preço</th>
+                    <th scope="col">Quantidade</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Vendedor</th>
+                </tr>            
+            </thead>
+
+            <tbody>
+
+                {% if produtos %}
+                    <tr>
+                        {% for p in produtos %}
+                            <td>{{prod_codigo}}</td>
+                            <td> {{p.prod_nome}} </td>
+                            <td> {{p.prod_descricao}} </td>
+                            <td> {{p.prod_preco}} </td>
+                            <td> {{p.prod_qtd}} </td>
+                            <td> {{p.prod_inativo}} </td>
+                             
+                            
+                            <td> {{User.name}} </td> 
+
+                        {%endfor%}
+                    </tr>
+                {% else %}
+                        <p> Produto não encontrado </p>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+
+
+        
 
 {% endblock %}
