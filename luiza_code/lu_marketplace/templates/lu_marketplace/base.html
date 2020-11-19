@@ -57,12 +57,19 @@
       </div>
       </div>
     </nav>
+
     <div>
       {% if messages %}
-      <ul class="messages">
+      <ul class="messages list-group text-center">
+
           {% for message in messages %}
-          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-          {% endfor %}
+          <li{% if message.tags %} 
+              class="{{ message.tags }}"{% endif %}> 
+            <div class=" alert alert-success">
+              {{ message }}
+            </div> 
+          </li>
+        {% endfor %}
       </ul>
 {% endif %}
     </div>
