@@ -1,11 +1,11 @@
-<html>
-    <div>
-        <form action="." method="GET" class="form-inline">
-            <input type="text" id="search" name="search" class="form-control" placeholder="Busca">
-            <input type="submit" class="btn btn-primary" value="Ok">
-        </form>
-    </div>
-<body>
+{% extends 'base.html' %} {% block title %} Cadastro de Produtos {% endblock %}
+
+{% block content %} 
+
+    </br>
+    <h3>Produtos</h3>
+    </br>
+    
     {% if produtos %}
         {% for p in produtos %}
         <li>
@@ -15,6 +15,5 @@
     {% else %}
         <p> Produto não encontrado </p>
     {% endif %}
-</body>
 
-</html>
+{% endblock %}
