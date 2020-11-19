@@ -10,7 +10,7 @@ def index(request):
     produtos = Produto.objects.all()
     search = request.GET.get('search')
     if search:
-        produtos = produtos.filter(prod_nome=search)
+        produtos = produtos.filter(prod_nome__icontains=search)
 
     context = {'produtos': produtos}
     return render(request, 'lu_marketplace/index.html', context)
