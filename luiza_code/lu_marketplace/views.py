@@ -1,5 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views.generic import CreateView
+from .models import Produto
 
-def index(request):
-    return HttpResponse('<h1>Lu Marketplace</h1>')
+
+class CadastrarProduto(CreateView):
+    model = Produto
+    template_name = 'index.html'
+    fields = '__all__'
