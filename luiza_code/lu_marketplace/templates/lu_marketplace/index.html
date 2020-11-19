@@ -6,6 +6,14 @@
     <h3>Produtos</h3>
     </br>
 
+    <style>
+        .inativo {
+          color: gray;
+          font-style: italic;
+          background-color: #f0f5f5;
+        }
+    </style>
+
     <div class="table-responsive">
         {% if produtos %}
 
@@ -31,28 +39,52 @@
             </th>
             <td>
                 {% for produto in produtos %}
+
             </td>
 
             <tbody>
-                <td> {{produto.prod_codigo}}</td>
+                {% if produto.prod_inativo %}
+                <td class="inativo"> {{produto.prod_codigo}} </td>
+                <td class="inativo"> {{produto.prod_nome}} </td>
+                <td class="inativo"> {{produto.prod_descricao}} </td>
+                <td class="inativo"> {{produto.prod_preco}} </td>
+                <td class="inativo"> {{produto.prod_qtd}} </td>
+                <td class="inativo"> Inativo</td>                             
+                <td class="inativo"> {{produto.vend_id}} </td> 
+                <td class="inativo"><form class="form-inline my-2 my-lg-0" method="GET">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="button">Atualizar</button>
+                  </form>
+                </td>
+                <td class="inativo"><form class="form-inline my-2 my-lg-0" method="GET">
+                    <button class="btn btn-outline-dark my-2 my-sm-0" type="button"> Ativar </button>
+                  </form>
+                </td>
+                <td class="inativo"><form class="form-inline my-2 my-lg-0" method="GET">
+                    <button class="btn btn-outline-danger my-2 my-sm-0" type="button">Excluir</button>
+                  </form>
+                </td>
+				{% else %}
+				<td> {{produto.prod_codigo}}</td>
                 <td> {{produto.prod_nome}} </td>
                 <td> {{produto.prod_descricao}} </td>
                 <td> {{produto.prod_preco}} </td>
                 <td> {{produto.prod_qtd}} </td>
-                <td> {{produto.prod_inativo}}</td>                             
+                <td> Ativo</td>                             
                 <td> {{produto.vend_id}} </td> 
                 <td><form class="form-inline my-2 my-lg-0" method="GET">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Atualizar</button>
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="button">Atualizar</button>
                   </form>
                 </td>
                 <td><form class="form-inline my-2 my-lg-0" method="GET">
-                    <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Inativar</button>
+                    <button class="btn btn-outline-dark my-2 my-sm-0" type="button">Inativar</button>
                   </form>
                 </td>
                 <td><form class="form-inline my-2 my-lg-0" method="GET">
-                    <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Excluir</button>
+                    <button class="btn btn-outline-danger my-2 my-sm-0" type="button">Excluir</button>
                   </form>
                 </td>
+				{% endif %}
+                
             
             {% endfor %}
             </tbody>
