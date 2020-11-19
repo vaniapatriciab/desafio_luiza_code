@@ -21,6 +21,6 @@ class Produto(models.Model):
     prod_inativo = models.BooleanField(default=False, verbose_name='Produto Inativo')
     vend_id = models.ForeignKey(Vendedor, on_delete=CASCADE, verbose_name='Vendedor')
 
-    def __str__(self, vend_id) -> str:
+    def __str__(self) -> str:
         return self.prod_nome
     
