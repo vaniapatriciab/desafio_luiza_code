@@ -5,5 +5,5 @@ from .models import Produto
 
 class CadastrarProduto(CreateView):
     model = Produto
-    template_name = 'index.html'
+    template_name = 'cadastrar_prod.html'
     fields = '__all__'
