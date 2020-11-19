@@ -6,6 +6,6 @@ urlpatterns = [
 
     path('', views.index, name='luMarketplace-index'),
 
-    path('cad_produtos/', CadastrarProduto.as_view(),
+    path('cadastrar-prod/', CadastrarProduto.as_view(),
          name='luMarketplace-cadastro')
 ]
