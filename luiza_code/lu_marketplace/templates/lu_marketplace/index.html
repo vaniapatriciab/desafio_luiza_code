@@ -7,6 +7,8 @@
     </br>
 
     <div class="table-responsive">
+        {% if produtos %}
+
         <table class="table">
             <thead>
                 <tr>
@@ -20,28 +22,30 @@
                 </tr>            
             </thead>
 
+            <!-- <th scope="row">
+                {% for produto in produtos %}
+                {% endfor %}
+            </th> -->
+            <td>
+                {% for produto in produtos %}
+            </td>
+
             <tbody>
-
-                {% if produtos %}
-                    <tr>
-                        {% for p in produtos %}
-                            <td>{{prod_codigo}}</td>
-                            <td> {{p.prod_nome}} </td>
-                            <td> {{p.prod_descricao}} </td>
-                            <td> {{p.prod_preco}} </td>
-                            <td> {{p.prod_qtd}} </td>
-                            <td> {{p.prod_inativo}} </td>
-                             
-                            
-                            <td> {{User.name}} </td> 
-
-                        {%endfor%}
-                    </tr>
-                {% else %}
-                        <p> Produto não encontrado </p>
-                {% endif %}
+                <td> {{produto.prod_codigo}}</td>
+                <td> {{produto.prod_nome}} </td>
+                <td> {{produto.prod_descricao}} </td>
+                <td> {{produto.prod_preco}} </td>
+                <td> {{produto.prod_qtd}} </td>
+                <td> {{produto.prod_inativo}}</td>                            
+                <td> {{produto.vend_id}} </td> 
+            
+            {% endfor %}
             </tbody>
         </table>
+
+        {% else %}
+            <p>Produto não encontrado. </p>
+        {% endif %}
     </div>
 
 
