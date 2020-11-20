@@ -34,5 +34,11 @@ class AtualizarProduto(SuccessMessageMixin, CreateView):
     def get_success_url(self):  
         return '/'
 
+def luMarketplace_deletar(request, id_prod):
+    Produto.objects.filter(prod_codigo=id_prod).delete()
+    produtos = Produto.objects.all()
+    listaProdutos = Produto.objects.all()
+    context = {'produtos': produtos, 'listaProdutos': listaProdutos}
+    return render(request, 'lu_marketplace/index.html', context)
 
 

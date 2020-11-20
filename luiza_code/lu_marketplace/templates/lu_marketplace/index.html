@@ -61,9 +61,9 @@
                     <button class="btn btn-outline-dark my-2 my-sm-0" type="button"> Ativar </button>
                   </form>
                 </td>
-                <td class="inativo"><form class="form-inline my-2 my-lg-0" method="GET">
-                    <button class="btn btn-outline-danger my-2 my-sm-0" type="button">Excluir</button>
-                  </form>
+                <td class="inativo"><a href="{% url 'luMarketplace-deletar' produto.prod_codigo %}">
+                  <button class="btn btn-outline-danger my-2 my-sm-0" type="button">Excluir</button>
+                    </a>              
                 </td>
 				{% else %}
 				<td> {{produto.prod_codigo}}</td>
@@ -81,9 +81,9 @@
                     <button class="btn btn-outline-dark my-2 my-sm-0" type="button">Inativar</button>
                   </form>
                 </td>
-                <td><form class="form-inline my-2 my-lg-0" method="GET">
+                <td><a href="{% url 'luMarketplace-deletar' produto.prod_codigo %}">
                     <button class="btn btn-outline-danger my-2 my-sm-0" type="button">Excluir</button>
-                  </form>
+                    </a>              
                 </td>
 				{% endif %}
                 
