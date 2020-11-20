@@ -41,4 +41,19 @@ def luMarketplace_deletar(request, id_prod):
     context = {'produtos': produtos, 'listaProdutos': listaProdutos}
     return render(request, 'lu_marketplace/index.html', context)
 
+def luMarketplace_inativar(request, id_prod):
+    Produto.objects.filter(prod_codigo=id_prod).update(prod_inativo=True)
+    produtos = Produto.objects.all()
+    listaProdutos = Produto.objects.all()
+    context = {'produtos': produtos, 'listaProdutos': listaProdutos}
+    return render(request, 'lu_marketplace/index.html', context)
+
+def luMarketplace_ativar(request, id_prod):
+    Produto.objects.filter(prod_codigo=id_prod).update(prod_inativo=False)
+    produtos = Produto.objects.all()
+    listaProdutos = Produto.objects.all()
+    context = {'produtos': produtos, 'listaProdutos': listaProdutos}
+    return render(request, 'lu_marketplace/index.html', context)
+
+
 

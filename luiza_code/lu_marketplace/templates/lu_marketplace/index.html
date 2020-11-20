@@ -55,15 +55,15 @@
                 <td class="inativo"> {{produto.vend_id}} </td> 
                 <td class="inativo"><form class="form-inline my-2 my-lg-0" method="GET">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="button">Atualizar</button>
-                  </form>
+                </form>
                 </td>
-                <td class="inativo"><form class="form-inline my-2 my-lg-0" method="GET">
+                <td class="inativo"><a href="{% url 'luMarketplace-ativar' produto.prod_codigo %}">
                     <button class="btn btn-outline-dark my-2 my-sm-0" type="button"> Ativar </button>
-                  </form>
+                </a>
                 </td>
                 <td class="inativo"><a href="{% url 'luMarketplace-deletar' produto.prod_codigo %}">
                   <button class="btn btn-outline-danger my-2 my-sm-0" type="button">Excluir</button>
-                    </a>              
+                </a>              
                 </td>
 				{% else %}
 				<td> {{produto.prod_codigo}}</td>
@@ -77,13 +77,13 @@
                     <button class="btn btn-outline-success my-2 my-sm-0" type="button">Atualizar</button>
                   </form>
                 </td>
-                <td><form class="form-inline my-2 my-lg-0" method="GET">
-                    <button class="btn btn-outline-dark my-2 my-sm-0" type="button">Inativar</button>
-                  </form>
+                <td><a href="{% url 'luMarketplace-inativar' produto.prod_codigo %}">
+                  <button class="btn btn-outline-dark my-2 my-sm-0" type="button">Inativar</button>
+                </a>              
                 </td>
                 <td><a href="{% url 'luMarketplace-deletar' produto.prod_codigo %}">
                     <button class="btn btn-outline-danger my-2 my-sm-0" type="button">Excluir</button>
-                    </a>              
+                </a>              
                 </td>
 				{% endif %}
                 
