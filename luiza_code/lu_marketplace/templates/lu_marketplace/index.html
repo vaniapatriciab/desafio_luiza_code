@@ -15,7 +15,9 @@
     </style>
 
     <div class="table-responsive">
-        {% if produtos %}
+        {% if not listaProdutos %}
+            <p>Nenhum produto cadastrado ainda, que tal começar? </p>
+        {% elif produtos %}
 
         <table class="table table-hover">
             <thead>
@@ -89,10 +91,11 @@
             {% endfor %}
             </tbody>
         </table>
-
         {% else %}
-            <p>Produto não encontrado. </p>
+          <p>Produto não encontrado. </p>
         {% endif %}
+
+        
     </div>
 
 
