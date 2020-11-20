@@ -54,6 +54,3 @@ def luMarketplace_ativar(request, id_prod):
     listaProdutos = Produto.objects.all()
     context = {'produtos': produtos, 'listaProdutos': listaProdutos}
     return render(request, 'lu_marketplace/index.html', context)
-
-
-
