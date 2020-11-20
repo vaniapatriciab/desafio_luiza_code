@@ -8,11 +8,12 @@ from django.contrib.messages.views import SuccessMessageMixin
 
 def index(request):
     produtos = Produto.objects.all()
+    listaProdutos = Produto.objects.all()
     search = request.GET.get('search')
     if search:
         produtos = produtos.filter(prod_nome__icontains=search)
 
-    context = {'produtos': produtos}
+    context = {'produtos': produtos, 'listaProdutos': listaProdutos}
     return render(request, 'lu_marketplace/index.html', context)
 
 
